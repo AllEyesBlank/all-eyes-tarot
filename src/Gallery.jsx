@@ -10,6 +10,9 @@ const Gallery = ({show, toggle, cards}) => {
         {cards.map((card) => (
           <GalleryImg card={card}/>
         ))}
+        <div>
+        <i class="fa-solid fa-rectangle-xmark close-icon" onClick={toggle}></i>
+        </div>
       </div>
     )
   }
