@@ -29,7 +29,7 @@ class Login extends React.Component {
           </div><div className="Input">
             <input type="text" onChange={this.setPassword.bind(this)} placeholder="Password"></input>
           </div>
-          <button onClick={this.props.toggle}> submit </button>
+          <button onClick={(e) => this.props.toggle(e, this.state.user)}> submit </button>
           </div>
         </div>
       )

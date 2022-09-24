@@ -16,6 +16,7 @@ body {
     width: 100vw;
     height: 100vh;
     top: 0px;
+    left: 0px;
     color: #455A64;
     font-family: var(--fontFamily);
     font-size: var(--fontSizeMd);
@@ -28,7 +29,7 @@ body {
   width: 92%;
   max-width: 400px;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   border-radius: 15px;
 }
 
@@ -63,6 +64,7 @@ body {
   width: 100vw;
   height: 100vh;
   top: 0px;
+  left: 0px;
   color: #455A64;
   font-family: var(--fontFamily);
   font-size: var(--fontSizeMd);
@@ -361,4 +363,83 @@ button:hover {
 
 .sorter-icon-clicked:active {
   color: #492347;
+}
+
+.journal-modal-wrapper {
+  position: fixed;
+	/* Stay in place */
+	z-index: 30;
+	/* Sit on top */
+	height: 70%;
+	width: 70%;
+	overflow: auto;
+  max-width:300px;
+  left: 10%;
+  top: 10%;
+  padding: 5%;
+  margin-bottom: 5%;
+  border-radius: 15px;
+	/* Enable scroll if needed */
+	background-color: rgb(0, 0, 0);
+	/* Fallback color */
+	background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  animation-name: zoom;
+  animation-duration: 0.5s;
+}
+
+.journal-modal-content {
+  padding: 3%;
+  color: white;
+  text-align: center;
+  line-height: 1.4;
+  font-family: 'Futura';
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: space-between;
+}
+.journal-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+}
+.journal-image {
+  float: right;
+}
+
+.journal-image img {
+  object-fit: cover;
+}
+
+.archive-modal {
+  position: fixed;
+	/* Stay in place */
+	z-index: 30;
+	/* Sit on top */
+	height: 70%;
+	width: 70%;
+	overflow: auto;
+  max-width:300px;
+  left: 10%;
+  top: 10%;
+  padding: 5%;
+  margin-bottom: 5%;
+  border-radius: 15px;
+	/* Enable scroll if needed */
+	background-color: rgb(0, 0, 0);
+	/* Fallback color */
+	background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  animation-name: zoom;
+  animation-duration: 0.5s;
+}
+
+.entry {
+  background-color: white;
+  color: black;
 }

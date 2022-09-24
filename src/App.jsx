@@ -10,9 +10,12 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
+      oldUser: '',
+      user: '',
       showLogin: true,
       showReading: false,
       showGallery: false,
+      showArchive: false,
       currentCard: '',
       currentCards: cards,
       noFilters: true,
@@ -28,11 +31,15 @@ class App extends React.Component {
     if (this.state.currentCards.length === 0) {
       this.setState({ currentCards: cards, noFilters: true })
     }
+    if (this.state.user !== this.state.oldUser) {
+      this.setState({ oldUser: this.state.user });
+    }
   }
 
-  toggleLogin(e) {
+  toggleLogin(e, username) {
     e.preventDefault();
-    this.setState({ showLogin: !this.state.showLogin });
+    console.log('logged in as ', username);
+    this.setState({ showLogin: !this.state.showLogin, user: username });
   }
 
   toggleReading(e) {
@@ -43,6 +50,12 @@ class App extends React.Component {
   toggleGallery(e) {
     e.preventDefault();
     this.setState({ showGallery: !this.state.showGallery })
+  }
+
+  toggleArchive(e) {
+    console.log('boom baby')
+    e.preventDefault();
+    this.setState({ showArchive: !this.state.showArchive })
   }
 
   wandFilter() {
@@ -144,15 +157,15 @@ class App extends React.Component {
   render() {
     return (
       <div className="total-wrap">
-        <Reading show={this.state.showReading} toggle={this.toggleReading.bind(this)} card={this.state.currentCard} />
+        <Reading show={this.state.showReading} toggle={this.toggleReading.bind(this)} card={this.state.currentCard} user={this.state.user}/>
         <div className="wrapper">
           <Login show={this.state.showLogin} toggle={this.toggleLogin.bind(this)} />
           <Gallery show={this.state.showGallery} toggle={this.toggleGallery.bind(this)} cards={this.state.currentCards} />
-          <Archive />
+          <Archive show={this.state.showArchive} toggle={this.toggleArchive.bind(this)} user={this.state.user}/>
           <div className="button-panel">
             <button onClick={this.toggleReading.bind(this)}> Get a Reading </button>
             <button onClick={this.toggleGallery.bind(this)}> See All Cards </button>
-            <button> Journal </button>
+            <button onClick={this.toggleArchive.bind(this)}> Journal </button>
             <button onClick={this.toggleLogin.bind(this)}> Log Out </button>
             <div className="sorter-icons">
               <SorterIcons icon={'wand'} toggle={this.wandFilter.bind(this)} clicked={this.state.wandFilter}/>
