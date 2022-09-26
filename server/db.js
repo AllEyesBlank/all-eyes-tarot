@@ -50,8 +50,14 @@ const create = (user, pass) => {
   return newUser.save();
 }
 
+const deleteOne = async (createdAt) => {
+  const toDelete = await Entry.findOneAndRemove({ createdAt : createdAt })
+  return;
+}
+
 module.exports.insert = insert;
 module.exports.get = get;
 module.exports.userInUse = userInUse;
 module.exports.create = create;
 module.exports.verify = verify;
+module.exports.delete = deleteOne;
