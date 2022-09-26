@@ -16,7 +16,6 @@ class Archive extends React.Component {
       this.setState({ newUser: this.props.user });
       return axios.get(`/entries/${this.props.user}`)
         .then((data) => {
-          console.log('data we got: ', data)
           return this.setState({ entries: data.data })
       })
     }
@@ -24,11 +23,20 @@ class Archive extends React.Component {
 
   render () {
     if (this.props.show) {
+      if (this.state.entries.length === 0) {
+        return (
+          <div className="archive-modal"> Hello, {this.props.user}!
+          No entries yet!
+          <i class="fa-solid fa-rectangle-xmark close-icon" onClick={this.props.toggle}></i>
+        </div>
+        )
+      }
       return (
-        <div className="archive-modal"> Hewwoooo
+        <div className="archive-modal"> Hello, {this.props.user}!
           {this.state.entries.map((entry) => (
             <ArchiveEntry entry={entry}/>
           ))}
+          <i class="fa-solid fa-rectangle-xmark close-icon" onClick={this.props.toggle}></i>
         </div>
       )
     } else {

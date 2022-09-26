@@ -18,6 +18,31 @@ app.get('/entries/:user', (req, res) => {
     })
 })
 
+app.put('/user', (req, res) => {
+  return db.verify(req.body.user, req.body.pass)
+    .then((bool) => {
+      if (bool) {
+        res.status(200).send('verified')
+      } else {
+        res.status(200).send('no user found')
+      }
+    })
+})
+
+app.post('/user', (req, res) => {
+  return db.userInUse(req.body.user)
+    .then((bool) => {
+      if (bool === false) {
+        return db.create(req.body.user, req.body.pass)
+          .then(() => {
+            res.status(200).send('new user created')
+          })
+      } else {
+        res.status(200).send('username in use');
+      }
+    })
+})
+
 app.post('/entries', (req, res) => {
   return db.insert(req.body)
     .then(() => {

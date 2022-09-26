@@ -1,8 +1,10 @@
 import React from 'react';
-import loginimg from './../tarot/headshop.png'
+import loginimg from './../tarot/headshop.png';
+import titleImg from './../tarot/alleyestitle.png';
+import axios from 'axios';
 
 class Login extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {
       user: '',
@@ -18,18 +20,45 @@ class Login extends React.Component {
     this.setState({ pass: e.target.value })
   }
 
+  handleSubmit(user, pass) {
+    return axios.put('/user', { user: user, pass: pass  })
+      .then((data) => {
+        if (data.data === 'verified') {
+          this.setState({ user: '', pass: '' })
+          this.props.toggle(user);
+        } else {
+          alert('username or password are not recognized.')
+        }
+      })
+  }
+
+  handleCreate(user, pass) {
+    return axios.post('/user', { user: user, pass: pass})
+      .then((data) => {
+        if (data.data === 'username in use') {
+          alert('username is already in use.')
+        } else {
+          alert(`new user ${user} created!`)
+          this.setState({ user: '', pass: '' })
+          this.props.toggle(user);
+        }
+      })
+  }
+
   render() {
     if (this.props.show) {
       return (
         <div className="login-page">
           <div className="login-wrapper">
-              <img src={loginimg}></img>
-          <div className="Input">
-            <input type="text" onChange={this.setUsername.bind(this)} placeholder="Username"></input>
-          </div><div className="Input">
-            <input type="text" onChange={this.setPassword.bind(this)} placeholder="Password"></input>
-          </div>
-          <button onClick={(e) => this.props.toggle(e, this.state.user)}> submit </button>
+          <img src={titleImg}></img>
+            <div className="username-input">
+              <input type="text" onChange={this.setUsername.bind(this)} placeholder="Username"></input>
+              <input type="password" onChange={this.setPassword.bind(this)} placeholder="Password"></input>
+            </div>
+            <div className="login-buttons">
+            <button className="login-button" onClick={(e) => this.handleSubmit(this.state.user, this.state.pass)}> login </button>
+            <button className="login-button" onClick={(e) => this.handleCreate(this.state.user, this.state.pass)}> create </button>
+            </div>
           </div>
         </div>
       )

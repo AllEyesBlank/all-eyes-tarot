@@ -15,8 +15,8 @@ const Reading = ({show, toggle, card, user}) => {
         <i className="fa-solid fa-hand-sparkles reading-icon" onClick={() => setModal(!modal)}></i>
         <i className="fa-solid fa-pen-nib writing-icon" onClick={() => {setWrite(!write)}}></i>
         </div>
-        <InfoModal show={modal} card={card} toggle={() => {setModal.bind(this)}}/>
-        <JournalModal show={write} card={card} user={user} toggle={() => {setModal.bind(this)}} />
+        <InfoModal show={modal} card={card} toggle={setModal.bind(this)}/>
+        <JournalModal show={write} card={card} user={user} toggle={setWrite.bind(this)} />
           <div className="card-img">
             <img onClick={toggle} src={card.img}
             height='100%'

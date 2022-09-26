@@ -36,9 +36,8 @@ class App extends React.Component {
     }
   }
 
-  toggleLogin(e, username) {
-    e.preventDefault();
-    console.log('logged in as ', username);
+  toggleLogin(username) {
+    console.log('logged in as :', username)
     this.setState({ showLogin: !this.state.showLogin, user: username });
   }
 
@@ -53,7 +52,6 @@ class App extends React.Component {
   }
 
   toggleArchive(e) {
-    console.log('boom baby')
     e.preventDefault();
     this.setState({ showArchive: !this.state.showArchive })
   }
@@ -157,10 +155,10 @@ class App extends React.Component {
   render() {
     return (
       <div className="total-wrap">
-        <Reading show={this.state.showReading} toggle={this.toggleReading.bind(this)} card={this.state.currentCard} user={this.state.user}/>
+        <Login show={this.state.showLogin} toggle={this.toggleLogin.bind(this)} />
         <div className="wrapper">
-          <Login show={this.state.showLogin} toggle={this.toggleLogin.bind(this)} />
-          <Gallery show={this.state.showGallery} toggle={this.toggleGallery.bind(this)} cards={this.state.currentCards} />
+          <Reading show={this.state.showReading} toggle={this.toggleReading.bind(this)} card={this.state.currentCard} user={this.state.user}/>
+          <Gallery show={this.state.showGallery} toggle={this.toggleGallery.bind(this)} cards={this.state.currentCards} user={this.state.user}/>
           <Archive show={this.state.showArchive} toggle={this.toggleArchive.bind(this)} user={this.state.user}/>
           <div className="button-panel">
             <button onClick={this.toggleReading.bind(this)}> Get a Reading </button>
