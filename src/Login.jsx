@@ -11,7 +11,12 @@ class Login extends React.Component {
       pass: '',
     }
   }
-
+  // componentDidMount () {
+  //   return axios.get('https://rws-cards-api.herokuapp.com/api/v1/cards/')
+  //     .then((data) => {
+  //       console.log('tarot API data: ', data);
+  //     })
+  // }
   setUsername(e) {
     this.setState({ user: e.target.value })
   }

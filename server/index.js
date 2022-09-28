@@ -50,12 +50,23 @@ app.post('/entries', (req, res) => {
     })
 })
 
-app.delete('/entries', (req, res) => {
-  return db.delete(req.body.createdAt)
+app.put('/entries', (req, res) => {
+  return db.delete(req.body.body.user, req.body.body.entry.createdAt)
     .then(() => {
       res.status(200).send();
     })
 })
+
+app.put('/pass', (req, res) => {
+  return db.change(req.body)
+    .then(() => {
+      res.status(200).send();
+    })
+    .catch(() => {
+      res.status(404).send();
+    })
+})
+
 const PORT = 8080;
 
 app.listen(PORT);

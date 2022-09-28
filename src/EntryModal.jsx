@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
-const EntryModal = ({show, entry, toggle}) => {
-  var date = Date(entry.createdAt);
+const EntryModal = ({user, show, entry, toggle}) => {
+  const [deleted, setDeleted] = useState(false)
+  const deleteOne = (obj) => {
+    return axios.put('/entries', { body: { user: user, entry: obj }})
+      .then(() => {
+        setDeleted(true);
+      })
+  }
   if (show) {
     return (
       <div className="entry-modal-wrapper">
@@ -16,8 +23,9 @@ const EntryModal = ({show, entry, toggle}) => {
           {entry.title + ' : ' + entry.summary}
         </div>
         <div>
-          Created {date.slice(0, 24)}
+          Created {entry.createdAt};
         </div>
+        <button onClick={() => {deleteOne(entry)}}>remove entry</button>
       </div>
     </div>
     )

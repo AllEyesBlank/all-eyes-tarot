@@ -5,6 +5,8 @@ import Gallery from './Gallery.jsx';
 import Archive from './Archive.jsx';
 import cards from './cardfunc.jsx';
 import SorterIcons from './SorterIcons.jsx';
+import Help from './Help.jsx';
+import Info from './Info.jsx'
 
 class App extends React.Component {
   constructor(props) {
@@ -16,6 +18,8 @@ class App extends React.Component {
       showReading: false,
       showGallery: false,
       showArchive: false,
+      showHelp: false,
+      showInfo: false,
       currentCard: '',
       currentCards: cards,
       noFilters: true,
@@ -37,7 +41,6 @@ class App extends React.Component {
   }
 
   toggleLogin(username) {
-    console.log('logged in as :', username)
     this.setState({ showLogin: !this.state.showLogin, user: username });
   }
 
@@ -54,6 +57,16 @@ class App extends React.Component {
   toggleArchive(e) {
     e.preventDefault();
     this.setState({ showArchive: !this.state.showArchive })
+  }
+
+  toggleHelp(e) {
+    e.preventDefault();
+    this.setState({ showHelp: !this.state.showHelp })
+  }
+
+  toggleUserInfo(e) {
+    e.preventDefault();
+    this.setState({ showInfo: !this.state.showInfo})
   }
 
   wandFilter() {
@@ -160,6 +173,12 @@ class App extends React.Component {
           <Reading show={this.state.showReading} toggle={this.toggleReading.bind(this)} card={this.state.currentCard} user={this.state.user}/>
           <Gallery show={this.state.showGallery} toggle={this.toggleGallery.bind(this)} cards={this.state.currentCards} user={this.state.user}/>
           <Archive show={this.state.showArchive} toggle={this.toggleArchive.bind(this)} user={this.state.user}/>
+          <Help show={this.state.showHelp} toggle={this.toggleHelp.bind(this)} />
+          <Info show={this.state.showInfo} toggle={this.toggleUserInfo.bind(this)} user={this.state.user}/>
+          <div className="helpers-holder">
+            <i className="fa-solid fa-question help-icon" onClick={this.toggleHelp.bind(this)}></i>
+            <i class="fa-solid fa-gear gear-icon" onClick={this.toggleUserInfo.bind(this)}></i>
+          </div>
           <div className="button-panel">
             <button onClick={this.toggleReading.bind(this)}> Get a Reading </button>
             <button onClick={this.toggleGallery.bind(this)}> See All Cards </button>

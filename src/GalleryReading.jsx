@@ -5,39 +5,11 @@ import JournalModal from './JournalModal.jsx';
 import WaiteModal from './WaiteModal.jsx';
 
 
-const Reading = ({show, toggle, card, user}) => {
+const GalleryReading = ({show, toggle, card, user}) => {
   const [modal, setModal] = useState(false);
   const [write, setWrite] = useState(false);
   const [waite, setWaite] = useState(false);
-  const [reverse, setReverse] = useState(Math.round(Math.random() - 0.2))
-  useEffect(() => {
-    if(!show) {
-      setReverse(Math.round(Math.random()));
-    }
-  })
   if (show) {
-    if (reverse) {
-      return (
-        <div className="full-photo-modal">
-          <div className="photo-modal-content">
-          <div className="icon-holder">
-          <i className="fa-solid fa-hand-sparkles reading-icon" onClick={() => setModal(!modal)}></i>
-          <i className="fa-solid fa-pen-nib writing-icon" onClick={() => {setWrite(!write)}}></i>
-          <i class="fa-solid fa-book-open waite-icon" onClick={() => {setWaite(!waite)}}></i>
-          </div>
-          <InfoModal show={modal} card={card} toggle={setModal.bind(this)}/>
-          <JournalModal show={write} card={card} user={user} toggle={setWrite.bind(this)} />
-          <WaiteModal show={waite} card={card} toggle={setWaite.bind(this)}/>
-            <div className="card-img-reverse">
-              <img onClick={toggle} src={card.img}
-              height='100%'
-              width="100%" />
-            </div>
-          <div className="card-title">{card.title} (Reversed)</div>
-          </div>
-        </div>
-      )
-    }
     return (
       <div className="full-photo-modal">
         <div className="photo-modal-content">
@@ -62,4 +34,4 @@ const Reading = ({show, toggle, card, user}) => {
     return null;
   }
 }
-export default Reading;
+export default GalleryReading;
