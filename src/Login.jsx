@@ -2,6 +2,7 @@ import React from 'react';
 import loginimg from './../tarot/headshop.png';
 import titleImg from './../tarot/alleyestitle.png';
 import axios from 'axios';
+import ErrorModal from './ErrorModal.jsx'
 
 class Login extends React.Component {
   constructor(props) {
@@ -9,14 +10,11 @@ class Login extends React.Component {
     this.state = {
       user: '',
       pass: '',
+      showError: false,
+      error: '',
     }
   }
-  // componentDidMount () {
-  //   return axios.get('https://rws-cards-api.herokuapp.com/api/v1/cards/')
-  //     .then((data) => {
-  //       console.log('tarot API data: ', data);
-  //     })
-  // }
+
   setUsername(e) {
     this.setState({ user: e.target.value })
   }
@@ -32,7 +30,7 @@ class Login extends React.Component {
           this.setState({ user: '', pass: '' })
           this.props.toggle(user);
         } else {
-          alert('username or password are not recognized.')
+          this.setState({ showError: true, error: 'badpass'})
         }
       })
   }
@@ -41,19 +39,23 @@ class Login extends React.Component {
     return axios.post('/user', { user: user, pass: pass})
       .then((data) => {
         if (data.data === 'username in use') {
-          alert('username is already in use.')
+          this.setState({ showError: true, error: 'useduser'})
         } else {
-          alert(`new user ${user} created!`)
           this.setState({ user: '', pass: '' })
           this.props.toggle(user);
         }
       })
   }
 
+  errorToggle() {
+    this.setState({ showError: false, error: '' })
+  }
+
   render() {
     if (this.props.show) {
       return (
         <div className="login-page">
+          <ErrorModal show={this.state.showError} error={this.state.error} toggle={this.errorToggle.bind(this)}/>
           <div className="login-wrapper">
           <img src={titleImg}></img>
             <div className="username-input">

@@ -10,6 +10,10 @@ app.use(express.urlencoded({
 app.use(express.json());
 app.use(express.static('./public'));
 
+app.get('/entries/', (req, res) => {
+  res.status(200).send();
+})
+
 app.get('/entries/:user', (req, res) => {
   let user = req.url.slice(9, req.url.length);
   return db.get(user)
@@ -59,8 +63,8 @@ app.put('/entries', (req, res) => {
 
 app.put('/pass', (req, res) => {
   return db.change(req.body)
-    .then(() => {
-      res.status(200).send();
+    .then((data) => {
+      res.status(200).send(data);
     })
     .catch(() => {
       res.status(404).send();

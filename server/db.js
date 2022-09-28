@@ -32,7 +32,7 @@ const get = (user) => {
 const verify = async (user, pass) => {
   const allUsers = await User.find({ user: user });
   if (allUsers.length > 0) {
-    const match = await bcrypt.compareSync(pass, allUsers[0].pass);
+    const match = await bcrypt.compare(pass, allUsers[0].pass);
     if (match) {
       return true;
     } else {
@@ -66,14 +66,12 @@ const deleteOne = async (user, createdAt) => {
 const change = async (obj) => {
   const hashedNew = await bcrypt.hash(obj.new, 10);
   const toUpdate = await User.findOne({ user: obj.user })
-  console.log(toUpdate);
-  const match = await bcrypt.compareSync(obj.pass, toUpdate.pass)
+  const match = await bcrypt.compare(obj.pass, toUpdate.pass)
   if (match) {
     const Updating = await User.findOneAndUpdate({ user: obj.user }, { pass : hashedNew });
-    return Updating;
-  } else {
-    console.log('nope');
-    return;
+    return ('yep');
+  } else {;
+    return ('nope');
   }
 }
 
