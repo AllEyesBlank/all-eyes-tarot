@@ -1,3 +1,4 @@
 node_modules/
-/tarot
 firebaseconfig
+tarot.pem
+tarot
