@@ -13,7 +13,6 @@ class JournalModal extends React.Component {
   post () {
     return axios.post('/entries', { body: { user: this.props.user, title: this.state.title, summary: this.state.summary, createdAt: Date.now() , card: this.props.card }})
       .then(() => {
-        console.log('posted!')
         this.props.toggle();
       })
       .catch(() => {

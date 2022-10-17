@@ -15,7 +15,6 @@ const WaiteModal = ({show, card, toggle}) => {
   useEffect(() => {
     axios.get(`https://rws-cards-api.herokuapp.com/api/v1/cards/${card.code}`)
       .then((data) => {
-        // console.log('data: ', data);
         setCurrent(data.data.card);
       })
   })

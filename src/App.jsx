@@ -111,7 +111,6 @@ class App extends React.Component {
     if (this.state.noFilters) {
       this.setState({ currentCards: cards.slice(14, 28), noFilters: false, cupFilter: true})
     } else {
-      console.log('cuppin')
       var currentSet = this.state.currentCards;
       if (!this.state.cupFilter) {
         this.setState({ currentCards: currentSet.concat(cards.slice(14, 28)), cupFilter: true })

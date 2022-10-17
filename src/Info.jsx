@@ -7,7 +7,6 @@ const Info = ({show, user, toggle}) => {
   const handleSubmit = (u, o, n) => {
     return axios.put('/pass', { user: u, pass: o, new: n })
       .then((data) => {
-        console.log(data);
         if (data.data === 'yep') {
           alert(`password changed for ${user}`)
           return;
