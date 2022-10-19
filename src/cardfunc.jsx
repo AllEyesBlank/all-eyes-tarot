@@ -63,6 +63,7 @@ import card62 from './../tarot/5hierophant.png'
 import card63 from './../tarot/6lovers.png'
 import card64 from './../tarot/7chariot.png'
 import card65 from './../tarot/8adjustment.png'
+import card66 from './../tarot/9hermit.png'
 
 let descrip1 = "Although this card symbolizes a creative spark and beginning, the actual way forward doesn't always seem clear-- it's still just an abstract moment of inspiration. The classical illustration for this card has a castle on a hill in the background, which is something I really enjoyed. Here the wand becomes a cane, a handy walking-stick to prod you forward on your upcoming travels."
 
@@ -194,6 +195,8 @@ let descrip64 = "todays card is THE CHARIOT, a card that is all about forward mo
 
 let descrip65 = "todays card is ADJUSTMENT, traditionally named JUSTICE. i like adjustment better because it stays away from the moral implications of the term justice (and who can think of the latter word without picturing a courtroom or a lady in a blindfold with scales and a sword?). adjustment as a card refers to the great equalization of things, how everything returns to a set point of relative inaction and simplicity. this broad sentiment is available in science and spirituality-- it seems that everything trends towards balance eventually! in drawing this card i was thinking about how a lot of the conversations around climate change and mounting military and social tensions predict 'the end of the world', but really what is forecasted is that the world will rebalance, just in a way that is unlivable for humanity. maybe that's bleak if you're big on anthropocentrism! but i also think it's hard to think about 'justice' as a concept right now without thinking very bleakly."
 
+let descrip66 = "todays card is, fittingly, the hermit. he's an icon for the lonely hearts and the introspective, for taking time to yourself and growing individually. i think it's important to do this from time to time, but i definitely lean hard into being guarded and distant too often. it's not a bad thing but don't lose yourself to it!"
+
 
 const cards = [
   { img: card1, summary: descrip1, title: 'Ace of Wands', code: 'waac'},
@@ -260,6 +263,7 @@ const cards = [
   { img: card62, summary: descrip62, title: 'The Hierophant', code: 'ar05'},
   { img: card63, summary: descrip63, title: 'The Lovers', code: 'ar06'},
   { img: card64, summary: descrip64, title: 'The Chariot', code: 'ar07'},
-  { img: card65, summary: descrip65, title: 'Adjustment', code: 'ar11'}]
+  { img: card65, summary: descrip65, title: 'Adjustment', code: 'ar11'},
+  { img: card66, summary: descrip66, title: 'The Hermit', code: 'ar09'}]
 
 export default cards;
