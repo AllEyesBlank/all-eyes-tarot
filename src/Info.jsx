@@ -4,6 +4,8 @@ import axios from 'axios';
 const Info = ({show, user, toggle}) => {
   const [oldPass, setOldPass] = useState('')
   const [newPass, setNewPass] = useState('');
+  const [showError, setShowError] = useState(false);
+  const [error, setError] = useState('')
   const handleSubmit = (u, o, n) => {
     return axios.put('/pass', { user: u, pass: o, new: n })
       .then((data) => {
@@ -12,7 +14,8 @@ const Info = ({show, user, toggle}) => {
           return;
         }
         if (data.data === 'nope') {
-          alert(`could not change password. please make sure you entered all information correctly.`)
+          setError('badpass');
+          setShowError(true);
         }
       })
       .catch(() => {
@@ -22,6 +25,7 @@ const Info = ({show, user, toggle}) => {
   if (show) {
     return (
       <div className="waite-wrapper">
+      <ErrorModal show={showError} error={error} toggle={setShowError(!showError)}/>
       <div className="waite-info">
         <div>Hi {user}!</div>
         <div className="waite-title">Reset Password:</div>
