@@ -16,6 +16,7 @@ const Info = ({show, user, toggle}) => {
         if (data.data === 'nope') {
           setError('badpass');
           setShowError(true);
+          return;
         }
       })
       .catch(() => {

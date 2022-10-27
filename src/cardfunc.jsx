@@ -64,6 +64,7 @@ import card63 from './../tarot/6lovers.png'
 import card64 from './../tarot/7chariot.png'
 import card65 from './../tarot/8adjustment.png'
 import card66 from './../tarot/9hermit.png'
+import card67 from './../tarot/10wheel.png'
 
 let descrip1 = "Although this card symbolizes a creative spark and beginning, the actual way forward doesn't always seem clear-- it's still just an abstract moment of inspiration. The classical illustration for this card has a castle on a hill in the background, which is something I really enjoyed. Here the wand becomes a cane, a handy walking-stick to prod you forward on your upcoming travels."
 
@@ -197,6 +198,7 @@ let descrip65 = "todays card is ADJUSTMENT, traditionally named JUSTICE. i like 
 
 let descrip66 = "todays card is, fittingly, the hermit. he's an icon for the lonely hearts and the introspective, for taking time to yourself and growing individually. i think it's important to do this from time to time, but i definitely lean hard into being guarded and distant too often. it's not a bad thing but don't lose yourself to it!"
 
+let descrip67 = "todays card is THE WHEEL (of fortune). You might also call this card 'chance'! the wheel of fortune has a long and storied symbolic history and many hilarious illustrations ranging waaaay back into history. it is, put reductively, the philosophy that what goes up comes down! there is no placating fate, you just take the cards you're dealt. rich today, poor tomorrow. etc etc etc. i tried to imbue this card with a little more passivity because oftentimes the wheel of fortune takes on kind of a moralistic tone that i think goes against its very nature."
 
 const cards = [
   { img: card1, summary: descrip1, title: 'Ace of Wands', code: 'waac'},
@@ -264,6 +266,7 @@ const cards = [
   { img: card63, summary: descrip63, title: 'The Lovers', code: 'ar06'},
   { img: card64, summary: descrip64, title: 'The Chariot', code: 'ar07'},
   { img: card65, summary: descrip65, title: 'Adjustment', code: 'ar11'},
-  { img: card66, summary: descrip66, title: 'The Hermit', code: 'ar09'}]
+  { img: card66, summary: descrip66, title: 'The Hermit', code: 'ar09'},
+  { img: card67, summary: descrip67, title: 'The Wheel of Fortune', code: 'ar10'}]
 
 export default cards;
