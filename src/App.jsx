@@ -147,14 +147,14 @@ class App extends React.Component {
 
   majorSorter() {
     if (this.state.noFilters) {
-      this.setState({ currentCards: cards.slice(56, 65), noFilters: false, majorFilter: true})
+      this.setState({ currentCards: cards.slice(56, 71), noFilters: false, majorFilter: true})
     } else {
       var currentSet = this.state.currentCards;
       if (!this.state.majorFilter) {
-        this.setState({ currentCards: currentSet.concat(cards.slice(56, 65)), majorFilter: true })
+        this.setState({ currentCards: currentSet.concat(cards.slice(56, 71)), majorFilter: true })
       } else {
         for (let i = 0; i < currentSet.length; i++) {
-          if (currentSet[i].title.indexOf('The') !== -1 || currentSet[i].title === 'Adjustment') {
+          if (currentSet[i].title.indexOf('The') !== -1 || currentSet[i].title === 'Adjustment' || currentSet[i].title === 'Strength' || currentSet[i].title === 'Death' || currentSet[i].title === 'Temperance') {
             currentSet.splice(i, 1);
             i--;
           }

@@ -65,6 +65,10 @@ import card64 from './../tarot/7chariot.png'
 import card65 from './../tarot/8adjustment.png'
 import card66 from './../tarot/9hermit.png'
 import card67 from './../tarot/10wheel.png'
+import card68 from './../tarot/11strength.png'
+import card69 from './../tarot/12hanged.png'
+import card70 from './../tarot/13death.png'
+import card71 from './../tarot/14temperance.png'
 
 let descrip1 = "Although this card symbolizes a creative spark and beginning, the actual way forward doesn't always seem clear-- it's still just an abstract moment of inspiration. The classical illustration for this card has a castle on a hill in the background, which is something I really enjoyed. Here the wand becomes a cane, a handy walking-stick to prod you forward on your upcoming travels."
 
@@ -200,6 +204,14 @@ let descrip66 = "todays card is, fittingly, the hermit. he's an icon for the lon
 
 let descrip67 = "todays card is THE WHEEL (of fortune). You might also call this card 'chance'! the wheel of fortune has a long and storied symbolic history and many hilarious illustrations ranging waaaay back into history. it is, put reductively, the philosophy that what goes up comes down! there is no placating fate, you just take the cards you're dealt. rich today, poor tomorrow. etc etc etc. i tried to imbue this card with a little more passivity because oftentimes the wheel of fortune takes on kind of a moralistic tone that i think goes against its very nature."
 
+let descrip68 = "this week's card is STRENGTH! Tarot is a magic system that dares to ask the age-old question 'what is true strength?' and answer it with 'it's when a lady can take down a lion' and i think that's beautiful. But for real this is a card that usually refers to inner strength, to overcoming a particularly difficult struggle, and to trusting one's bravery over believing that one is physically stronger than one's foes. But c'mon. the card is called strength! As for the art, it's hard to improve on woman wrestles a lion triumphantly, so i just tried to do my best gentileschi and put some feeling into it. if you see me at the gym, this is the build im going for."
+
+let descrip69 = "this week's card is THE HANGED MAN. this is an interesting card imo! what i like most about it is the sense of unease it can foster because it defamiliarizes recognizable symbols in a new context. the hanged man is not there unwillingly, and he is not dying! he is serene and contemplative as he hangs upside down from something like a gallows, which conjures thoughts of torturous punishment. neat! that's magical thinking done right, if you ask me. this card usually indicates a momentary sacrifice or willful suspension of a cherished activity for a purpose. have you ever felt the weird ecstasy of hunger after fasting for a day or two? i think that's pretty near to what this card is all about. have a strange one, loves."
+
+let descrip70 = "Today's card is DEATH, which notably does not mean that somebody in the querant's life is going to die soon or has died recently. Death in tarot's systems has more to do with state change. There are plenty of cards that indicate a coming shift, but Death clarifies that this is one that will be a) drastic, b) unavoidable, and c) there is no way to prepare for it or predict what comes after. this is why it still has a reputation for being a pretty scary card! any radical change can be uncomfortable, especially with the corollaries this card implies, but death is also notoriously ambivalent. as for the art, my main restriction for myself was No Spooky Skeletons. i just find them kind of overused as\n a memento mori. i wanted death to be a big force of nature that doesn't care about your bones."
+
+let descrip71 = "today's card is TEMPERANCE, a card referring to one of the divine virtues! this is the virtue of moderation, not necessarily related to prohibition. this is a card that indicates a need for balance, for dilution of extremes and coolness of temper. the four cardinal virtues are generally thought of less than their sexier counterparts, the seven deadly sins, and temperance is maybe one of the most forgotten even of those, but it's an interesting concept to incorporate as a core tenet of your belief in what is 'good', i think. pushed to its logical conclusion, you could argue it stands in stark contrast to the idea of a universal good or possibility of a responsible all-powerful figure. and yet..! the 'traditional' imagery for temperance in tarot is an ambiguously sexed angel pouring water into wine, and sometimes you just want to draw a cool enby, so thank you for indulging me as\n i hewed pretty \nclose to that motif."
+
 const cards = [
   { img: card1, summary: descrip1, title: 'Ace of Wands', code: 'waac'},
   { img: card2, summary: descrip2, title: 'Two of Wands', code: 'wa02' },
@@ -267,6 +279,10 @@ const cards = [
   { img: card64, summary: descrip64, title: 'The Chariot', code: 'ar07'},
   { img: card65, summary: descrip65, title: 'Adjustment', code: 'ar11'},
   { img: card66, summary: descrip66, title: 'The Hermit', code: 'ar09'},
-  { img: card67, summary: descrip67, title: 'The Wheel of Fortune', code: 'ar10'}]
+  { img: card67, summary: descrip67, title: 'The Wheel of Fortune', code: 'ar10'},
+  { img: card68, summary: descrip68, title: 'Strength', code: 'ar08'},
+  { img: card69, summary: descrip69, title: 'The Hanged Man', code: 'ar12'},
+  { img: card70, summary: descrip70, title: 'Death', code: 'ar13'},
+  { img: card71, summary: descrip71, title: 'Tempereance', code: 'ar14'}]
 
 export default cards;
