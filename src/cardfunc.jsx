@@ -69,6 +69,7 @@ import card68 from './../tarot/11strength.png'
 import card69 from './../tarot/12hanged.png'
 import card70 from './../tarot/13death.png'
 import card71 from './../tarot/14temperance.png'
+import card72 from './../tarot/15devil.png'
 
 let descrip1 = "Although this card symbolizes a creative spark and beginning, the actual way forward doesn't always seem clear-- it's still just an abstract moment of inspiration. The classical illustration for this card has a castle on a hill in the background, which is something I really enjoyed. Here the wand becomes a cane, a handy walking-stick to prod you forward on your upcoming travels."
 
@@ -212,6 +213,8 @@ let descrip70 = "Today's card is DEATH, which notably does not mean that somebod
 
 let descrip71 = "today's card is TEMPERANCE, a card referring to one of the divine virtues! this is the virtue of moderation, not necessarily related to prohibition. this is a card that indicates a need for balance, for dilution of extremes and coolness of temper. the four cardinal virtues are generally thought of less than their sexier counterparts, the seven deadly sins, and temperance is maybe one of the most forgotten even of those, but it's an interesting concept to incorporate as a core tenet of your belief in what is 'good', i think. pushed to its logical conclusion, you could argue it stands in stark contrast to the idea of a universal good or possibility of a responsible all-powerful figure. and yet..! the 'traditional' imagery for temperance in tarot is an ambiguously sexed angel pouring water into wine, and sometimes you just want to draw a cool enby, so thank you for indulging me as\n i hewed pretty \nclose to that motif."
 
+let descrip72 = "This card is certainly not a positive draw, but it's maybe not as negative as it first appears. The devil in tarot's magic system stands for the greatest achievement of the material-- the representation of the physical and the worldly. Usually this card indicates that the querant is overly reliant / being tempted by the ephemeral pleasures of the real and ignoring their spiritual and emotional needs. The devil may be a villain, but he is nothing without the power of seduction that material wealth promises, and this card indicates a challenge for the querant in that area. As for the art! I wanted to do something with how 'trapped' the devil is, since that is such a prominent message in Christianity and also in tarot's interpretation, but in the end I had trouble resisting the urge to draw the spooky goat man. so here he is! I took little bits of various devils in folklore and old depictions to fill out his chimeric visage. i think he's quite handsome."
+
 const cards = [
   { img: card1, summary: descrip1, title: 'Ace of Wands', code: 'waac'},
   { img: card2, summary: descrip2, title: 'Two of Wands', code: 'wa02' },
@@ -283,6 +286,7 @@ const cards = [
   { img: card68, summary: descrip68, title: 'Strength', code: 'ar08'},
   { img: card69, summary: descrip69, title: 'The Hanged Man', code: 'ar12'},
   { img: card70, summary: descrip70, title: 'Death', code: 'ar13'},
-  { img: card71, summary: descrip71, title: 'Tempereance', code: 'ar14'}]
+  { img: card71, summary: descrip71, title: 'Temperance', code: 'ar14'},
+  { img: card72, summary: descrip72, title: 'The Devil', code: 'ar15'}]
 
 export default cards;
