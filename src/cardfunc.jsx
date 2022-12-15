@@ -70,6 +70,7 @@ import card69 from './../tarot/12hanged.png'
 import card70 from './../tarot/13death.png'
 import card71 from './../tarot/14temperance.png'
 import card72 from './../tarot/15devil.png'
+import card73 from './../tarot/16tower.png'
 
 let descrip1 = "Although this card symbolizes a creative spark and beginning, the actual way forward doesn't always seem clear-- it's still just an abstract moment of inspiration. The classical illustration for this card has a castle on a hill in the background, which is something I really enjoyed. Here the wand becomes a cane, a handy walking-stick to prod you forward on your upcoming travels."
 
@@ -215,6 +216,8 @@ let descrip71 = "today's card is TEMPERANCE, a card referring to one of the divi
 
 let descrip72 = "This card is certainly not a positive draw, but it's maybe not as negative as it first appears. The devil in tarot's magic system stands for the greatest achievement of the material-- the representation of the physical and the worldly. Usually this card indicates that the querant is overly reliant / being tempted by the ephemeral pleasures of the real and ignoring their spiritual and emotional needs. The devil may be a villain, but he is nothing without the power of seduction that material wealth promises, and this card indicates a challenge for the querant in that area. As for the art! I wanted to do something with how 'trapped' the devil is, since that is such a prominent message in Christianity and also in tarot's interpretation, but in the end I had trouble resisting the urge to draw the spooky goat man. so here he is! I took little bits of various devils in folklore and old depictions to fill out his chimeric visage. i think he's quite handsome."
 
+let descrip73 = "Today's card is THE TOWER. there are plenty of cards that seem like bad news, but nothing quite tops the Tower in terms of There Is No Positive Way To Interpret This. The tower is about a fall from grace, the crumbling of the querant's hubris, the unfavorable judgment of their spiritual self-imprisonment. it is a portent of present and future doom, and comes with a side of telling the querant they deserved it on some level. whether that's because the querant was too proud or too narrow minded, its referent is pretty clearly the old tower of babel parable."
+
 const cards = [
   { img: card1, summary: descrip1, title: 'Ace of Wands', code: 'waac'},
   { img: card2, summary: descrip2, title: 'Two of Wands', code: 'wa02' },
@@ -287,6 +290,7 @@ const cards = [
   { img: card69, summary: descrip69, title: 'The Hanged Man', code: 'ar12'},
   { img: card70, summary: descrip70, title: 'Death', code: 'ar13'},
   { img: card71, summary: descrip71, title: 'Temperance', code: 'ar14'},
-  { img: card72, summary: descrip72, title: 'The Devil', code: 'ar15'}]
+  { img: card72, summary: descrip72, title: 'The Devil', code: 'ar15'},
+  { img: card73, summary: descrip73, title: 'The Tower', code: 'ar16'}]
 
 export default cards;
