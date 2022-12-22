@@ -18,8 +18,8 @@ const WaiteModal = ({show, card, toggle}) => {
       if (card.code === item.name_short) {
         setCurrent(item);
       }
-    })
-  }
+    });
+  };
   useEffect(() => {
     reading();
   }, [])

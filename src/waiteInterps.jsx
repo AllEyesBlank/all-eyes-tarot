@@ -1,6 +1,6 @@
 import React from 'react';
 
-const waiteFunc = {
+const waites = {
     "nhits": 78,
     "cards": [
       {
@@ -841,4 +841,5 @@ const waiteFunc = {
       }
     ]
 }
-export default waiteFunc;
+
+export default waites;

@@ -71,6 +71,7 @@ import card70 from './../tarot/13death.png'
 import card71 from './../tarot/14temperance.png'
 import card72 from './../tarot/15devil.png'
 import card73 from './../tarot/16tower.png'
+import card74 from './../tarot/17star.png'
 
 let descrip1 = "Although this card symbolizes a creative spark and beginning, the actual way forward doesn't always seem clear-- it's still just an abstract moment of inspiration. The classical illustration for this card has a castle on a hill in the background, which is something I really enjoyed. Here the wand becomes a cane, a handy walking-stick to prod you forward on your upcoming travels."
 
@@ -218,6 +219,8 @@ let descrip72 = "This card is certainly not a positive draw, but it's maybe not 
 
 let descrip73 = "Today's card is THE TOWER. there are plenty of cards that seem like bad news, but nothing quite tops the Tower in terms of There Is No Positive Way To Interpret This. The tower is about a fall from grace, the crumbling of the querant's hubris, the unfavorable judgment of their spiritual self-imprisonment. it is a portent of present and future doom, and comes with a side of telling the querant they deserved it on some level. whether that's because the querant was too proud or too narrow minded, its referent is pretty clearly the old tower of babel parable."
 
+let descrip74 = "Today's card is THE STAR, a card with a fairly important place in the major arcana. Immediately following the wreck of the tower, the star promises a sort of hope. Of course, it's not the hope that one might be yearning for-- this is still a magic system bent on subverting expectations. Instead, it's the hope that comes from realizing your personal failings are minuscule and irrelevant in most scopes. The star is a card that deals with the Burkean sublime, a popular literary motif for Frankenstein readers everywhere-- the awe of the grandeur of the world around you, the way the fear of one's meaninglessness intermingles with the graciousness of getting to experience the enormity of nature. Such a complicated feeling, I feel like it's natural conclusion is in cosmic horror. looking to the stars at night, do you feel the sense of scale? is it comforting, or does it fill you with a creeping dread? that's what the star asks you to contend with, in the wreckage of humanity's great crumbling tower of artifice. as for the art, i like the idea of big weird aliens that aren't necessarily menacing so much as they are incomprehensible. and yeah, they could probably squish you like an ant-- but how many ants do you see in a day that you don't squish?"
+
 const cards = [
   { img: card1, summary: descrip1, title: 'Ace of Wands', code: 'waac'},
   { img: card2, summary: descrip2, title: 'Two of Wands', code: 'wa02' },
@@ -291,6 +294,7 @@ const cards = [
   { img: card70, summary: descrip70, title: 'Death', code: 'ar13'},
   { img: card71, summary: descrip71, title: 'Temperance', code: 'ar14'},
   { img: card72, summary: descrip72, title: 'The Devil', code: 'ar15'},
-  { img: card73, summary: descrip73, title: 'The Tower', code: 'ar16'}]
+  { img: card73, summary: descrip73, title: 'The Tower', code: 'ar16'},
+  { img: card74, summary: descrip74, title: 'The Star', code: 'ar17'}]
 
 export default cards;
