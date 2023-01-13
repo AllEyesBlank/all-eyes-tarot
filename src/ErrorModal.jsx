@@ -4,7 +4,7 @@ const ErrorModal = ({ show, error, toggle }) => {
   if (show) {
     if (error === 'useduser') {
       return (
-      <div className="waite-wrapper" onClick={toggle}>
+      <div className="waite-wrapper" onClick={() => {toggle(false)}}>
         <div className="waite-info">
           <div>Error!</div>
           <div>Looks like this username is in use already. Please try a different one!</div>
@@ -13,7 +13,7 @@ const ErrorModal = ({ show, error, toggle }) => {
       )
     } else if (error === 'badpass') {
       return (
-      <div className="waite-wrapper" onClick={toggle}>
+      <div className="waite-wrapper" onClick={() => {toggle(false)}}>
       <div className="waite-info">
         <div>Error!</div>
         <div>This username and password combination does not match our records. Please try again!</div>

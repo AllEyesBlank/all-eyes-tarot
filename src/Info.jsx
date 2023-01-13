@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import ErrorModal from './ErrorModal.jsx'
 
 const Info = ({show, user, toggle}) => {
   const [oldPass, setOldPass] = useState('')
@@ -26,7 +27,7 @@ const Info = ({show, user, toggle}) => {
   if (show) {
     return (
       <div className="waite-wrapper">
-      <ErrorModal show={showError} error={error} toggle={setShowError(!showError)}/>
+      <ErrorModal show={showError} error={error} toggle={setShowError}/>
       <div className="waite-info">
         <div>Hi {user}!</div>
         <div className="waite-title">Reset Password:</div>
